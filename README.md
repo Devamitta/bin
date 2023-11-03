@@ -1,5 +1,5 @@
 # bin
 
-various bash skripts
+various bash scripts
 
 /home/deva/.local/bin
