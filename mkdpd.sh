@@ -31,7 +31,7 @@ poetry run bash dps/bash/make_dpd.sh
 kill $MONITOR_PID
 
 # open log.
-xed '/home/deva/logs/mkdpd.log'
+# xed '/home/deva/logs/mkdpd.log'
 
 # Check if GoldenDict is running
 if pgrep -x "goldendict" > /dev/null

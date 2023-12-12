@@ -6,6 +6,8 @@ date
 cd "/home/deva/Documents/sasanarakkha/pali-english-recitations"
 make pdf
 
+make epub
+
 # make azw3
 
 # date
