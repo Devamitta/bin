@@ -48,4 +48,4 @@ then
 fi
 
 # Start GoldenDict
-goldendict &
+goldendict >/dev/null 2>&1 &
