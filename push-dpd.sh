@@ -12,6 +12,12 @@ while true; do
         1 )
             echo -e "\033[1;33m Processing unpack and copy of downloaded DPD...\033[0m"
             dps/scripts/unzip_dpd_downloaded.py
+                echo -ne "\033[1;34m Unzip locally as well?\033[0m"
+                read confirmation
+                if [[ $confirmation == "y" ]]; then
+                    echo -e "\033[1;33m Processing copy of local DPD...\033[0m"
+                    dps/scripts/unzip_dpd.py
+                fi
             break;;
         2 )
             echo -e "\033[1;33m Processing copy of local DPD...\033[0m"
@@ -22,3 +28,15 @@ while true; do
     esac
 done
 
+
+# Check if GoldenDict is running
+if pgrep -x "goldendict" > /dev/null
+then
+    # If it is running, kill it
+    killall goldendict
+    # Give some time for the process to be killed completely
+    sleep 1
+fi
+
+# Start GoldenDict
+goldendict >/dev/null 2>&1 &
