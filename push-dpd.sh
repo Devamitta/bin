@@ -17,11 +17,15 @@ while true; do
                 if [[ $confirmation == "y" ]]; then
                     echo -e "\033[1;33m Processing copy of local DPD...\033[0m"
                     dps/scripts/unzip_dpd.py
+                    rescan.sh
+                    sleep 20
+                    rescan.sh
                 fi
             break;;
         2 )
             echo -e "\033[1;33m Processing copy of local DPD...\033[0m"
             dps/scripts/unzip_dpd_local.py
+
             break;;
         *  )
             echo -e "\033[1;31m Please enter only 1 or 2 \033[0m";;
@@ -29,14 +33,4 @@ while true; do
 done
 
 
-# Check if GoldenDict is running
-if pgrep -x "goldendict" > /dev/null
-then
-    # If it is running, kill it
-    killall goldendict
-    # Give some time for the process to be killed completely
-    sleep 1
-fi
 
-# Start GoldenDict
-goldendict >/dev/null 2>&1 &
