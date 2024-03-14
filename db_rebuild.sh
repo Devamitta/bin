@@ -10,7 +10,7 @@ while true; do
     case $yn in
         [Yy]* )
             script -f -c "poetry run bash bash/build_db.sh" "/home/deva/logs/build_db.log"
-            script -f -c "poetry run python dps/scripts/add_combined_view.py"
+            poetry run python dps/scripts/add_combined_view.py
             script -f -c "poetry run python exporter/exporter.py" "/home/deva/logs/mkdpd.log"
             break;;
         * )
@@ -18,12 +18,10 @@ while true; do
     esac
 done
 
-
-
-
 rescan.sh
 
 sleep 20
 
 rescan.sh
+
 
