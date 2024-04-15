@@ -1,24 +1,24 @@
 #!/bin/bash
 
 # Navigate to the Downloads directory
-cd "/home/deva/Downloads/"
+# cd "/home/deva/Downloads/"
 
 # Find the zip file starting with "simsapa-main-ubuntu" and unzip it
-unzip -o simsapa-main-ubuntu*.zip
+# unzip -o Simsapa-*.zip
 
 # Move the desired AppImage from the "linux" folder to /home/deva/
-mv /home/deva/Downloads/linux/*.AppImage /home/deva/
+# mv /home/deva/Downloads/linux/*.AppImage /home/deva/
 
 # Remove the zip file
-rm simsapa-main-ubuntu*.zip
+# rm Simsapa-*.zip
 
 # Remove the "linux" directory
-rm -r linux/
+# rm -r linux/
 
 # cd "/home/deva/"
 
 # Make all AppImage files executable
-chmod +x /home/deva/*.AppImage
+# chmod +x /home/deva/*.AppImage
 
 # Find and run the AppImage
 appimage_path=$(find /home/deva -name 'Simsapa_Dhamma_Reader*.AppImage' -type f -print -quit)

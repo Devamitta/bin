@@ -9,7 +9,7 @@ while true; do
     read yn
     case $yn in
         [Yy]* )
-            poetry run bash dps/bash/update_db_from_backup.sh
+            script -f -c "poetry run bash dps/bash/update_db_from_backup.sh" "/home/deva/logs/build_db.log"
             break;;
         * )
             break;;
