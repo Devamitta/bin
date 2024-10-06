@@ -11,6 +11,6 @@ echo "------ generate RU DPD for GoldenDict Finished at $(date) ------"
 
 rescan.sh
 
-sleep 20
+sleep 15
 
 rescan.sh

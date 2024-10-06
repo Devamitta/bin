@@ -20,6 +20,20 @@ done
 
 
 while true; do
+    echo -ne "\033[1;34m need to copy ru-dpd?\033[0m"
+    read yn
+    case $yn in
+        [Yy]* )
+            echo -e "\033[1;33m Unzipping and copying ru-dpd.\033[0m"
+            dps/scripts/unzip_rudpd.py
+            break;;
+        * )
+            break;;
+    esac
+done
+
+
+while true; do
     echo -ne "\033[1;34m Please choose which DPD to copy: '1' - downloaded or '2' - local \033[0m"
     read choice
     case $choice in
@@ -32,6 +46,12 @@ while true; do
                     echo -e "\033[1;33m Processing copy of local DPD...\033[0m"
                     dps/scripts/unzip_dpd.py
                     rescan.sh
+                fi
+                echo -ne "\033[1;34m Unzip deconstructor and grammar to share as well?\033[0m"
+                read confirmation
+                if [[ $confirmation == "y" ]]; then
+                    echo -e "\033[1;33m Processing copy of deconstructor and grammar to share...\033[0m"
+                    dps/scripts/unzip_to_share.py
                 fi
             break;;
         2 )
