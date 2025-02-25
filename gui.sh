@@ -2,6 +2,6 @@
 
 cd "/home/deva/Documents/dpd-db/"
 
-poetry run bash dps/bash/gui.sh
+uv run bash dps/scripts/bash/gui.sh
 
 # xed '/home/deva/logs/gui.log'

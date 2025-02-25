@@ -7,9 +7,9 @@ cd '/home/deva/Documents/dpd-db'
 read -p "Do you want to update test field? (y) or without that field (enter): " answer
 
 if [[ "$answer" == "y" ]]; then
-    poetry run python dps/scripts/dps_anki_updater.py test
+    uv run python dps/scripts/export_from_db/dps_anki_updater.py test
 elif [[ -z "$answer" ]]; then
-    poetry run python dps/scripts/dps_anki_updater.py
+    uv run python dps/scripts/export_from_db/dps_anki_updater.py
 else
     echo "Invalid input. Please enter 'y' for yes or just press Enter for no."
 fi

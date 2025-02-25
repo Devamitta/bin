@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 cd "/home/deva/Documents/dpd-db/"
 
-uv run python gui/corrections_check_feedback.py
+uv run bash dps/scripts/bash/check_new_words.sh

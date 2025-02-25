@@ -5,12 +5,12 @@ echo -e "\033[1;33m We are going to make RU DPD dictionary Started at $(date) \0
 cd "/home/deva/Documents/dpd-db/"
 
 # Start capturing all terminal output and save to a log file
-script -f -c "poetry run bash dps/bash/make_ru_dpd.sh" "/home/deva/logs/mkrudpd.log"
+script -f -c "uv run bash dps/scripts/bash/make_ru_dpd.sh" "/home/deva/logs/mkrudpd.log"
 
 echo "------ generate RU DPD for GoldenDict Finished at $(date) ------"
 
 rescan.sh
 
-sleep 15
+sleep 25
 
 rescan.sh
