@@ -1,0 +1,6 @@
+# Ignore all files
+*
+# Except for .sh files
+!*.sh
+# Include the .gitignore file itself
+!.gitignore
