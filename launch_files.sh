@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# mount fileserver
+~/.local/bin/mnt.sh
+
 # Launch Nemo in the background
 nemo &
 
@@ -9,7 +12,7 @@ nemo_pid=$!
 # Wait for Nemo to finish
 wait $nemo_pid
 
-# Run your umnt.sh script after Nemo is closed
+# unmount fileserver after Nemo is closed
 ~/.local/bin/umnt.sh
 
 
